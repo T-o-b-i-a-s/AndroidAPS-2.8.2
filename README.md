@@ -30,22 +30,22 @@ However, it is important to start with well-tested basal rate and settings for i
 * New automation triggers and actions to allow for Automation rules specific for autoISF
 
 ## How to build this branch in Android Studio
-1. Close any currently open projects in Android Stuidio
+1. Close any currently open projects in Android Studio
 2. Create a new project by using the "Get from VCS" button to tell it to retrieve the source from a remote version control system
 3. Use the url of this repository as a source (https://github.com/T-o-b-i-a-s/AndroidAPS.git)
 4. Now wait until Android has completed any initialization activities. As always deny any requests to upgrade Gradle.
 5. Android Studio now shows the name of the current branch in the lower right corner
-* Usually this will be `master`, which contains an out-dated version of AndroidAPS, do **not** use the `master` branch
-* If it is not already selected, switch to the branch you want to build by clicking on the branch name,
-  choosing "show more" under "Remote branches" and look for the name of
-  the branch with an "origin/" prefix: e.g. origin/3.2.0.2-ai3.0. Left-click that name and
-  select "Checkout". The following screenshot shows how this will look like (a different branch was used here):
-  ![Branch selection](Branch_selection_sample.png)
+  * Usually this will be `master`, which contains an out-dated version of AndroidAPS, do **not** use the `master` branch
+  * If it is not already selected, switch to the branch you want to build by clicking on the branch name,
+    choosing "show more" under "Remote branches" and look for the name of
+    the branch with an "origin/" prefix: e.g. origin/3.2.0.2-ai3.0. Left-click that name and
+    select "Checkout". The following screenshot shows how this will look like (a different branch was used here):
+    ![Branch selection](Branch_selection_sample.png)
 6. The system will now create a local branch with the same name as the remote branch and switch to that branch, which is indicated by the name of
    the branch being shown in the lower right corner
 7. You can now build the APK with Build -> Generate signed Bundle / APK
 8. In case of any error messages during the build, try to first run a "Clean build" by selecting
-   Build -> Clean to remove any reminiants from previous builds and then start the APK build again.
+   Build -> Clean to remove any remnants from previous builds and then start the APK build again.
 9. If you experience recurring problems with building the APK, as a last resort consider to 
    delete your current Android Studio completely, reinstall the most recent version and clone 
    this repo into a new directory (different than the one you have used before). 
