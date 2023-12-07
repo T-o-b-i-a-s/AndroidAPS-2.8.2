@@ -184,27 +184,6 @@ class OverviewFragment : DaggerFragment(), View.OnClickListener, OnLongClickList
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Mod exercise mode toggle icon
-        if ( sp.getBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, false)) {
-            binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exercise)
-            binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonWarning)
-        } else {
-            binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exerciseinactive)
-            binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonDefault)
-        }
-        binding.exerciseModeCheckboxIcon.setOnClickListener {
-            if (sp.getBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, false) == true) {
-                binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exerciseinactive)
-                binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonDefault)
-                sp.putBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, false)
-            } else {
-                binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exercise)
-                binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonWarning)
-                sp.putBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, true)
-            }
-        }
-        // Mod end
-
         // pre-process landscape mode
         val screenWidth = dm.widthPixels
         val screenHeight = dm.heightPixels
@@ -253,6 +232,21 @@ class OverviewFragment : DaggerFragment(), View.OnClickListener, OnLongClickList
         binding.buttonsLayout.quickWizardButton.setOnLongClickListener(this)
         binding.infoLayout.apsMode.setOnClickListener(this)
         binding.infoLayout.apsMode.setOnLongClickListener(this)
+
+        // Mod exercise mode toggle icon
+        binding.exerciseModeCheckboxIcon.setOnClickListener {
+            if (sp.getBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, false) == true) {
+                binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exerciseinactive)
+                binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonDefault)
+                sp.putBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, false)
+            } else {
+                binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exercise)
+                binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonWarning)
+                sp.putBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, true)
+            }
+        }
+        // End mod
+        
     }
 
     @Synchronized
@@ -359,6 +353,17 @@ class OverviewFragment : DaggerFragment(), View.OnClickListener, OnLongClickList
         handler.post { refreshAll() }
         updatePumpStatus()
         updateCalcProgress()
+
+        // Mod check color of exercise mode toggle icon
+        if ( sp.getBoolean(app.aaps.core.utils.R.string.key_high_temptarget_raises_sensitivity, false)) {
+            binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exercise)
+            binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonWarning)
+        } else {
+            binding.exerciseModeCheckboxIcon.setImageResource(R.drawable.exerciseinactive)
+            binding.exerciseModeCheckboxIcon.setBackgroundResource(app.aaps.core.ui.R.color.ribbonDefault)
+        }
+        // End mod
+        
     }
 
     fun refreshAll() {
