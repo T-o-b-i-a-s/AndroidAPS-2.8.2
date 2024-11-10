@@ -36,7 +36,6 @@ Details of the new features are listed in the standard documents shown above. Im
    or version number or other path, **just use the URL as listed above**!
 4. Now wait until Android has completed any initialization activities. As always deny any requests to upgrade Gradle. A "Gradle sync" might however be necessary.
 5. Android Studio now shows the name of the current branch in the lower right corner. In some operating systems, the branch name is shown on the upper left within the title bar. 
-* Usually this will be `master`, which contains an out-dated version of AndroidAPS, do **not** use the `master` branch
 * If it is not already selected, switch to the branch you want to build by clicking on the branch name,
   choosing "show more" under "Remote branches" and look for the name of
   the branch with an "origin/" prefix: e.g. origin/3.2.0.4-ai3.0.1 . Left-click that name and
