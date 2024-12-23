@@ -22,7 +22,8 @@ However, it is important to start with well-tested basal rate and settings for i
 * This branch https://github.com/T-o-b-i-a-s/AndroidAPS/tree/3.2.0.4-ai3.0.1 uses
   AndroidAPS 3.2.0.4 (which is the `master` version on the official [Nightscout AndroidAPS]
   (https://github.com/nightscout/AndroidAPS)
-  repo by the time when this text was written) as a base and adds autoISF 3.0 to it.
+  repo by the time when this text was written) and adds a [bugfix to better detect filled BG gaps](https://github.com/nightscout/AndroidAPS/commit/25056b52b9c314b9e2b0cc771c7b1e46a70a0304) 
+  to be used as a base and then adds autoISF 3.0.1 to it.
 
 ## What's new in AutoISF Version 3.0.1 when compared to 3.0
 * Reduced and simplified number of autoisf settings
