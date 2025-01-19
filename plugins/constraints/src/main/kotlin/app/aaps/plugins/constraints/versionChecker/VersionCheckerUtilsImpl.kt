@@ -128,7 +128,7 @@ class VersionCheckerUtilsImpl @Inject constructor(
 
     private fun onExpireDateDetected(currentVersion: String, endDate: String?) {
         val now = dateUtil.now()
-        if (now > sp.getLong(R.string.key_last_expired_versionchecker_warning, 0) + (WARN_EVERY*150)) {
+        if (now > sp.getLong(R.string.key_last_expired_versionchecker_warning, 0) + WARN_EVERY) {
             aapsLogger.debug(LTag.CORE, rh.gs(R.string.version_expire, currentVersion, endDate))
             uiInteraction.addNotification(Notification.VERSION_EXPIRE, rh.gs(R.string.version_expire, currentVersion, endDate), Notification.LOW)
             sp.putLong(R.string.key_last_expired_versionchecker_warning, now)
