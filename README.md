@@ -19,14 +19,21 @@ However, it is important to start with well-tested basal rate and settings for i
   [Bjr](https://github.com/blaqone) and [myself](https://github.com/T-o-b-i-a-s).
 * This repository here was created to provide a stable version of AndroidAPS with the current autoISF extensions
   already integrated to simplify the build process.
-* This branch https://github.com/T-o-b-i-a-s/AndroidAPS/tree/3.2.0.4-ai3.0.1 uses
-  AndroidAPS 3.2.0.4 (which is the `master` version on the official [Nightscout AndroidAPS]
+* This branch https://github.com/T-o-b-i-a-s/AndroidAPS/tree/3.2.0.4-ai3.0.1-fewVersionReminders uses
+  AndroidAPS 3.2.0.4 (which was the `master` version on the official [Nightscout AndroidAPS]
   (https://github.com/nightscout/AndroidAPS)
-  repo by the time when this text was written) as a base and adds autoISF 3.0 to it.
+  repo before 3.3 was released) as a base and adds autoISF 3.0.1 to it.
 
-## What's new in AutoISF Version 3.0.1 when compared to 3.0
-* Reduced and simplified number of autoisf settings
-* Support for 1-minute glucose values from Fresstyle Libre 3
+## What's new in AutoISF Version 3.0.1-fewVersionReminders when compared to 3.0
+* Reduced and simplified number of autoISF settings
+* Support for 1-minute glucose values from Freestyle Libre 3
+* Notification messages that the a new AndroidAPS 3.3.x version is available are only shown every 150 days
+
+## Why was autoISF not added to the current AndroidAPS version 3.3.x? 
+* With AndroidAPS 3.3 many parts of the application have been refactored in Kotlin
+* autoISF could therefore not just be added to the new version, but also requires refactoring
+* We are currently working on the re-integration of autoISF into AAPS 3.3 and will publish results as soon as they
+  are completed and tested
 
 ## How to build this branch in Android Studio
 1. Close any currently open projects in Android Studio
@@ -34,11 +41,13 @@ However, it is important to start with well-tested basal rate and settings for i
 3. Use the url of this repository as a source (https://github.com/T-o-b-i-a-s/AndroidAPS.git). Do NOT append any branch name
    or version number or other path, **just use the URL as listed above**!
 4. Now wait until Android has completed any initialization activities. As always deny any requests to upgrade Gradle. A "Gradle sync" might however be necessary.
-5. Android Studio now shows the name of the current branch in the lower right corner. In some operating systems, the branch name is shown on the upper left within the title bar. 
+5. Android Studio now shows the name of the current branch in the lower right corner. In some operating systems, the branch name is shown on the upper 
+   left within the title bar. 
+
 * Usually this will be `master`, which contains an out-dated version of AndroidAPS, do **not** use the `master` branch
 * If it is not already selected, switch to the branch you want to build by clicking on the branch name,
   choosing "show more" under "Remote branches" and look for the name of
-  the branch with an "origin/" prefix: e.g. origin/3.2.0.4-ai3.0.1 . Left-click that name and
+  the branch with an "origin/" prefix: e.g. `origin/3.2.0.4-ai3.0.1-fewVersionReminders`. Left-click that name and
   select "Checkout". The following screenshot shows how this will look like in Win 10 Android Studio (a different branch was used here):
   ![Branch selection](Branch_selection_sample.png)
 6. The system will now create a local branch with the same name as the remote branch and switch to that branch, which is indicated by the name of
